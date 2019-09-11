@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <style>
         #map {
-            width: 621px;
+            width: 549px;
             height: 796px;
         }
         </style>
@@ -28,18 +28,11 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/bridgewatercanalworsleytomanchestertracks_1.js"></script>
-        <script src="data/barrowlooptracks_2.js"></script>
-        <script src="data/wyrleyessingtoncanalbrownhillstolongwoodtracks_3.js"></script>
-        <script src="data/riversoarnormantononsoartostanfordonsoartracks_4.js"></script>
-        <script src="data/riversoarhopeandanchorlooptracks_5.js"></script>
-        <script src="data/riverderwentdarleyabbeytoderbytracks_6.js"></script>
-        <script src="data/erewashcanaltrailpart1langleymilltoilkestontracks_7.js"></script>
-        <script src="data/erewashcanalilkestontotrentlocktracks_8.js"></script>
+        <script src="data/ENG_Canoe_Trails_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[52.440034799648764,-1.8289935677293732],[53.11520075358647,-0.9588298422896075]]);
+        }).fitBounds([[49.94624515994008,-4.62238693866006],[55.35455622386011,1.5292067003124166]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
         var bounds_group = new L.featureGroup([]);
@@ -51,526 +44,1769 @@
         });
         layer_OpenStreetMap_0;
         map.addLayer(layer_OpenStreetMap_0);
-        function pop_bridgewatercanalworsleytomanchestertracks_1(feature, layer) {
+        function pop_ENG_Canoe_Trails_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
+                        <th scope="row">fid</th>\
+                        <td>' + (feature.properties['fid'] !== null ? Autolinker.link(String(feature.properties['fid'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['cmt'] !== null ? Autolinker.link(String(feature.properties['cmt'])) : '') + '</td>\
+                        <th scope="row">id</th>\
+                        <td>' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['desc'] !== null ? Autolinker.link(String(feature.properties['desc'])) : '') + '</td>\
+                        <th scope="row">elevation</th>\
+                        <td>' + (feature.properties['elevation'] !== null ? Autolinker.link(String(feature.properties['elevation'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['src'] !== null ? Autolinker.link(String(feature.properties['src'])) : '') + '</td>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['link1_href'] !== null ? Autolinker.link(String(feature.properties['link1_href'])) : '') + '</td>\
+                        <th scope="row">feature_type</th>\
+                        <td>' + (feature.properties['feature_type'] !== null ? Autolinker.link(String(feature.properties['feature_type'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['link1_text'] !== null ? Autolinker.link(String(feature.properties['link1_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_type'] !== null ? Autolinker.link(String(feature.properties['link1_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_href'] !== null ? Autolinker.link(String(feature.properties['link2_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_text'] !== null ? Autolinker.link(String(feature.properties['link2_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_type'] !== null ? Autolinker.link(String(feature.properties['link2_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['number'] !== null ? Autolinker.link(String(feature.properties['number'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(String(feature.properties['type'])) : '') + '</td>\
+                        <th scope="row">file_name</th>\
+                        <td>' + (feature.properties['file_name'] !== null ? Autolinker.link(String(feature.properties['file_name'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_bridgewatercanalworsleytomanchestertracks_1_0() {
-            return {
-                pane: 'pane_bridgewatercanalworsleytomanchestertracks_1',
+        function style_ENG_Canoe_Trails_1_0(feature) {
+            switch(String(feature.properties['file_name'])) {
+                case '1-river-wye-glasbury-to-whitney-on-wye.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
                 opacity: 1,
-                color: 'rgba(190,207,80,1.0)',
+                color: 'rgba(102,207,121,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
                 weight: 2.0,
                 fillOpacity: 0,
             }
-        }
-        map.createPane('pane_bridgewatercanalworsleytomanchestertracks_1');
-        map.getPane('pane_bridgewatercanalworsleytomanchestertracks_1').style.zIndex = 401;
-        map.getPane('pane_bridgewatercanalworsleytomanchestertracks_1').style['mix-blend-mode'] = 'normal';
-        var layer_bridgewatercanalworsleytomanchestertracks_1 = new L.geoJson(json_bridgewatercanalworsleytomanchestertracks_1, {
-            attribution: '',
-            pane: 'pane_bridgewatercanalworsleytomanchestertracks_1',
-            onEachFeature: pop_bridgewatercanalworsleytomanchestertracks_1,
-            style: style_bridgewatercanalworsleytomanchestertracks_1_0,
-        });
-        bounds_group.addLayer(layer_bridgewatercanalworsleytomanchestertracks_1);
-        map.addLayer(layer_bridgewatercanalworsleytomanchestertracks_1);
-        function pop_barrowlooptracks_2(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cmt'] !== null ? Autolinker.link(String(feature.properties['cmt'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['desc'] !== null ? Autolinker.link(String(feature.properties['desc'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['src'] !== null ? Autolinker.link(String(feature.properties['src'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_href'] !== null ? Autolinker.link(String(feature.properties['link1_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_text'] !== null ? Autolinker.link(String(feature.properties['link1_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_type'] !== null ? Autolinker.link(String(feature.properties['link1_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_href'] !== null ? Autolinker.link(String(feature.properties['link2_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_text'] !== null ? Autolinker.link(String(feature.properties['link2_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_type'] !== null ? Autolinker.link(String(feature.properties['link2_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['number'] !== null ? Autolinker.link(String(feature.properties['number'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(String(feature.properties['type'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_barrowlooptracks_2_0() {
-            return {
-                pane: 'pane_barrowlooptracks_2',
+                    break;
+                case '2-river-wye-whitney-on-wye-to-byecross.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
                 opacity: 1,
-                color: 'rgba(196,60,57,1.0)',
+                color: 'rgba(42,63,222,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
                 weight: 2.0,
                 fillOpacity: 0,
             }
-        }
-        map.createPane('pane_barrowlooptracks_2');
-        map.getPane('pane_barrowlooptracks_2').style.zIndex = 402;
-        map.getPane('pane_barrowlooptracks_2').style['mix-blend-mode'] = 'normal';
-        var layer_barrowlooptracks_2 = new L.geoJson(json_barrowlooptracks_2, {
-            attribution: '',
-            pane: 'pane_barrowlooptracks_2',
-            onEachFeature: pop_barrowlooptracks_2,
-            style: style_barrowlooptracks_2_0,
-        });
-        bounds_group.addLayer(layer_barrowlooptracks_2);
-        map.addLayer(layer_barrowlooptracks_2);
-        function pop_wyrleyessingtoncanalbrownhillstolongwoodtracks_3(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cmt'] !== null ? Autolinker.link(String(feature.properties['cmt'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['desc'] !== null ? Autolinker.link(String(feature.properties['desc'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['src'] !== null ? Autolinker.link(String(feature.properties['src'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_href'] !== null ? Autolinker.link(String(feature.properties['link1_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_text'] !== null ? Autolinker.link(String(feature.properties['link1_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_type'] !== null ? Autolinker.link(String(feature.properties['link1_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_href'] !== null ? Autolinker.link(String(feature.properties['link2_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_text'] !== null ? Autolinker.link(String(feature.properties['link2_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_type'] !== null ? Autolinker.link(String(feature.properties['link2_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['number'] !== null ? Autolinker.link(String(feature.properties['number'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(String(feature.properties['type'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_wyrleyessingtoncanalbrownhillstolongwoodtracks_3_0() {
-            return {
-                pane: 'pane_wyrleyessingtoncanalbrownhillstolongwoodtracks_3',
+                    break;
+                case '3-river-wye-byecross-to-hereford.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
                 opacity: 1,
-                color: 'rgba(183,72,75,1.0)',
+                color: 'rgba(158,85,218,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
                 weight: 2.0,
                 fillOpacity: 0,
             }
-        }
-        map.createPane('pane_wyrleyessingtoncanalbrownhillstolongwoodtracks_3');
-        map.getPane('pane_wyrleyessingtoncanalbrownhillstolongwoodtracks_3').style.zIndex = 403;
-        map.getPane('pane_wyrleyessingtoncanalbrownhillstolongwoodtracks_3').style['mix-blend-mode'] = 'normal';
-        var layer_wyrleyessingtoncanalbrownhillstolongwoodtracks_3 = new L.geoJson(json_wyrleyessingtoncanalbrownhillstolongwoodtracks_3, {
-            attribution: '',
-            pane: 'pane_wyrleyessingtoncanalbrownhillstolongwoodtracks_3',
-            onEachFeature: pop_wyrleyessingtoncanalbrownhillstolongwoodtracks_3,
-            style: style_wyrleyessingtoncanalbrownhillstolongwoodtracks_3_0,
-        });
-        bounds_group.addLayer(layer_wyrleyessingtoncanalbrownhillstolongwoodtracks_3);
-        map.addLayer(layer_wyrleyessingtoncanalbrownhillstolongwoodtracks_3);
-        function pop_riversoarnormantononsoartostanfordonsoartracks_4(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cmt'] !== null ? Autolinker.link(String(feature.properties['cmt'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['desc'] !== null ? Autolinker.link(String(feature.properties['desc'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['src'] !== null ? Autolinker.link(String(feature.properties['src'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_href'] !== null ? Autolinker.link(String(feature.properties['link1_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_text'] !== null ? Autolinker.link(String(feature.properties['link1_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_type'] !== null ? Autolinker.link(String(feature.properties['link1_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_href'] !== null ? Autolinker.link(String(feature.properties['link2_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_text'] !== null ? Autolinker.link(String(feature.properties['link2_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_type'] !== null ? Autolinker.link(String(feature.properties['link2_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['number'] !== null ? Autolinker.link(String(feature.properties['number'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(String(feature.properties['type'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_riversoarnormantononsoartostanfordonsoartracks_4_0() {
-            return {
-                pane: 'pane_riversoarnormantononsoartostanfordonsoartracks_4',
+                    break;
+                case '4-river-wye-hereford-to-hoarwithy.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
                 opacity: 1,
-                color: 'rgba(232,113,141,1.0)',
+                color: 'rgba(138,130,228,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
                 weight: 2.0,
                 fillOpacity: 0,
             }
-        }
-        map.createPane('pane_riversoarnormantononsoartostanfordonsoartracks_4');
-        map.getPane('pane_riversoarnormantononsoartostanfordonsoartracks_4').style.zIndex = 404;
-        map.getPane('pane_riversoarnormantononsoartostanfordonsoartracks_4').style['mix-blend-mode'] = 'normal';
-        var layer_riversoarnormantononsoartostanfordonsoartracks_4 = new L.geoJson(json_riversoarnormantononsoartostanfordonsoartracks_4, {
-            attribution: '',
-            pane: 'pane_riversoarnormantononsoartostanfordonsoartracks_4',
-            onEachFeature: pop_riversoarnormantononsoartostanfordonsoartracks_4,
-            style: style_riversoarnormantononsoartostanfordonsoartracks_4_0,
-        });
-        bounds_group.addLayer(layer_riversoarnormantononsoartostanfordonsoartracks_4);
-        map.addLayer(layer_riversoarnormantononsoartostanfordonsoartracks_4);
-        function pop_riversoarhopeandanchorlooptracks_5(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cmt'] !== null ? Autolinker.link(String(feature.properties['cmt'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['desc'] !== null ? Autolinker.link(String(feature.properties['desc'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['src'] !== null ? Autolinker.link(String(feature.properties['src'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_href'] !== null ? Autolinker.link(String(feature.properties['link1_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_text'] !== null ? Autolinker.link(String(feature.properties['link1_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_type'] !== null ? Autolinker.link(String(feature.properties['link1_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_href'] !== null ? Autolinker.link(String(feature.properties['link2_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_text'] !== null ? Autolinker.link(String(feature.properties['link2_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_type'] !== null ? Autolinker.link(String(feature.properties['link2_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['number'] !== null ? Autolinker.link(String(feature.properties['number'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(String(feature.properties['type'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_riversoarhopeandanchorlooptracks_5_0() {
-            return {
-                pane: 'pane_riversoarhopeandanchorlooptracks_5',
+                    break;
+                case '5-river-wye-hoarwithy-to-ross-on-wye.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
                 opacity: 1,
-                color: 'rgba(243,166,178,1.0)',
+                color: 'rgba(95,66,202,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
                 weight: 2.0,
                 fillOpacity: 0,
             }
-        }
-        map.createPane('pane_riversoarhopeandanchorlooptracks_5');
-        map.getPane('pane_riversoarhopeandanchorlooptracks_5').style.zIndex = 405;
-        map.getPane('pane_riversoarhopeandanchorlooptracks_5').style['mix-blend-mode'] = 'normal';
-        var layer_riversoarhopeandanchorlooptracks_5 = new L.geoJson(json_riversoarhopeandanchorlooptracks_5, {
-            attribution: '',
-            pane: 'pane_riversoarhopeandanchorlooptracks_5',
-            onEachFeature: pop_riversoarhopeandanchorlooptracks_5,
-            style: style_riversoarhopeandanchorlooptracks_5_0,
-        });
-        bounds_group.addLayer(layer_riversoarhopeandanchorlooptracks_5);
-        map.addLayer(layer_riversoarhopeandanchorlooptracks_5);
-        function pop_riverderwentdarleyabbeytoderbytracks_6(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cmt'] !== null ? Autolinker.link(String(feature.properties['cmt'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['desc'] !== null ? Autolinker.link(String(feature.properties['desc'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['src'] !== null ? Autolinker.link(String(feature.properties['src'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_href'] !== null ? Autolinker.link(String(feature.properties['link1_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_text'] !== null ? Autolinker.link(String(feature.properties['link1_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_type'] !== null ? Autolinker.link(String(feature.properties['link1_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_href'] !== null ? Autolinker.link(String(feature.properties['link2_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_text'] !== null ? Autolinker.link(String(feature.properties['link2_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_type'] !== null ? Autolinker.link(String(feature.properties['link2_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['number'] !== null ? Autolinker.link(String(feature.properties['number'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(String(feature.properties['type'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_riverderwentdarleyabbeytoderbytracks_6_0() {
-            return {
-                pane: 'pane_riverderwentdarleyabbeytoderbytracks_6',
+                    break;
+                case '6-river-wye-ross-on-wye-to-symonds-yat.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
                 opacity: 1,
-                color: 'rgba(213,180,60,1.0)',
+                color: 'rgba(204,109,235,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
                 weight: 2.0,
                 fillOpacity: 0,
             }
-        }
-        map.createPane('pane_riverderwentdarleyabbeytoderbytracks_6');
-        map.getPane('pane_riverderwentdarleyabbeytoderbytracks_6').style.zIndex = 406;
-        map.getPane('pane_riverderwentdarleyabbeytoderbytracks_6').style['mix-blend-mode'] = 'normal';
-        var layer_riverderwentdarleyabbeytoderbytracks_6 = new L.geoJson(json_riverderwentdarleyabbeytoderbytracks_6, {
-            attribution: '',
-            pane: 'pane_riverderwentdarleyabbeytoderbytracks_6',
-            onEachFeature: pop_riverderwentdarleyabbeytoderbytracks_6,
-            style: style_riverderwentdarleyabbeytoderbytracks_6_0,
-        });
-        bounds_group.addLayer(layer_riverderwentdarleyabbeytoderbytracks_6);
-        map.addLayer(layer_riverderwentdarleyabbeytoderbytracks_6);
-        function pop_erewashcanaltrailpart1langleymilltoilkestontracks_7(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cmt'] !== null ? Autolinker.link(String(feature.properties['cmt'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['desc'] !== null ? Autolinker.link(String(feature.properties['desc'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['src'] !== null ? Autolinker.link(String(feature.properties['src'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_href'] !== null ? Autolinker.link(String(feature.properties['link1_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_text'] !== null ? Autolinker.link(String(feature.properties['link1_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_type'] !== null ? Autolinker.link(String(feature.properties['link1_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_href'] !== null ? Autolinker.link(String(feature.properties['link2_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_text'] !== null ? Autolinker.link(String(feature.properties['link2_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_type'] !== null ? Autolinker.link(String(feature.properties['link2_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['number'] !== null ? Autolinker.link(String(feature.properties['number'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(String(feature.properties['type'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_erewashcanaltrailpart1langleymilltoilkestontracks_7_0() {
-            return {
-                pane: 'pane_erewashcanaltrailpart1langleymilltoilkestontracks_7',
+                    break;
+                case '7-river-wye-symonds-yat-to-redbrook.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
                 opacity: 1,
-                color: 'rgba(133,182,111,1.0)',
+                color: 'rgba(211,83,98,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
                 weight: 2.0,
                 fillOpacity: 0,
             }
-        }
-        map.createPane('pane_erewashcanaltrailpart1langleymilltoilkestontracks_7');
-        map.getPane('pane_erewashcanaltrailpart1langleymilltoilkestontracks_7').style.zIndex = 407;
-        map.getPane('pane_erewashcanaltrailpart1langleymilltoilkestontracks_7').style['mix-blend-mode'] = 'normal';
-        var layer_erewashcanaltrailpart1langleymilltoilkestontracks_7 = new L.geoJson(json_erewashcanaltrailpart1langleymilltoilkestontracks_7, {
-            attribution: '',
-            pane: 'pane_erewashcanaltrailpart1langleymilltoilkestontracks_7',
-            onEachFeature: pop_erewashcanaltrailpart1langleymilltoilkestontracks_7,
-            style: style_erewashcanaltrailpart1langleymilltoilkestontracks_7_0,
-        });
-        bounds_group.addLayer(layer_erewashcanaltrailpart1langleymilltoilkestontracks_7);
-        map.addLayer(layer_erewashcanaltrailpart1langleymilltoilkestontracks_7);
-        function pop_erewashcanalilkestontotrentlocktracks_8(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cmt'] !== null ? Autolinker.link(String(feature.properties['cmt'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['desc'] !== null ? Autolinker.link(String(feature.properties['desc'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['src'] !== null ? Autolinker.link(String(feature.properties['src'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_href'] !== null ? Autolinker.link(String(feature.properties['link1_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_text'] !== null ? Autolinker.link(String(feature.properties['link1_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link1_type'] !== null ? Autolinker.link(String(feature.properties['link1_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_href'] !== null ? Autolinker.link(String(feature.properties['link2_href'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_text'] !== null ? Autolinker.link(String(feature.properties['link2_text'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['link2_type'] !== null ? Autolinker.link(String(feature.properties['link2_type'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['number'] !== null ? Autolinker.link(String(feature.properties['number'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(String(feature.properties['type'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_erewashcanalilkestontotrentlocktracks_8_0() {
-            return {
-                pane: 'pane_erewashcanalilkestontotrentlocktracks_8',
+                    break;
+                case 'ashby-canal-hinckley-to-sutton-cheney-wharf.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
                 opacity: 1,
-                color: 'rgba(145,82,45,1.0)',
+                color: 'rgba(211,83,98,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
                 weight: 2.0,
                 fillOpacity: 0,
             }
+                    break;
+                case 'barrow-loop.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(131,216,122,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'basingstoke-canal-ash-lock-to-reading-road-fleet.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(222,119,55,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'basingstoke-canal-barley-mow-to-odiham.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(90,216,204,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'basingstoke-canal-crookham-to-barley-mow.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(239,15,78,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'beaulieu-river-bucklers-hard-to-beaulieu.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(213,216,45,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'beaulieu-river-bucklers-hard-to-lepe-beach.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(167,215,95,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'bingley-ring-river-aire-leeds-liverpool-canal.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(167,215,95,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'birmingham-4-dudley-canal-trust-to-cambrian-wharf.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(159,100,226,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'birmingham-canals-route-1-brownhills-to-sneyd.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(74,229,240,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'birmingham-canals-route-2-sneyd-to-bentley-bridge.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(138,35,212,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'birmingham-canals-route-3-bentley-bridge-to-dudley-crt.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(30,206,229,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'birmingham-canals-route-5-cambrian-wharf-to-shirley-drawbridge.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(41,41,220,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'birmingham-canals-route-6-shirley-drawbridge-to-hockley-heath.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(220,239,48,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'bridgewater-canal-barton-upon-irwell-to-leigh.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(132,209,73,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'bridgewater-canal-castlefield-to-little-bollington.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(202,106,112,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'bridgewater-canal-little-bollington-to-keckwick-hill-bridge.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(210,230,117,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'bridgewater-canal-worsley-to-manchester.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(124,208,211,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'bridgwater-and-taunton-canal-maunsel-lock-to-creech-st-michael-and-return.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(217,105,64,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'broads-barton-broad-and-dilham-canal.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(234,233,140,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'broads-horning-and-hoveton-little-broad.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(50,220,61,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'broads-wroxham-and-salhouse-broads.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(50,220,61,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'caldon-canal-deep-hayes-country-park-to-froghall-wharf.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(232,118,236,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'chelmer-and-blackwater-navigation-chelmsford-to-maldon.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(161,118,220,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'chesterfield-canal-heritage-trail.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(161,118,220,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'chesterfield-canal-worksop-to-osberton.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(25,113,228,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'christchurch-circle.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(230,54,227,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'cromford-canal-heritage-trail.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(224,83,44,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'derwent-water.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(219,84,149,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'durham-loop.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(218,72,39,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'erewash-canal-ilkeston-to-trent-lock.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(213,184,89,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'erewash-canal-trail-part-1-langley-mill-to-ilkeston.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(47,114,239,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'fossdyke-navigation-torksey-to-lincoln.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(13,220,131,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'gloucester-sharpness-canal-purton-to-parkend-bridge.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(229,148,77,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'gloucester-sharpness-canal-purton-to-slimbridge.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(150,215,30,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'gloucester-sharpness-canal-purton-to-splatt-bridge-return.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(169,51,216,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'gloucester-sharpness-purton-to-sharpness-return.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(54,28,223,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'grand-western-canal-trail.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(77,228,206,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'horsenden-hill-visitor-centre-to-little-venice-return.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(237,119,55,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'kennet-avon-canal-aldermaston-to-reading.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(93,40,216,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'kennet-avon-canal-crofton-to-hungerford.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(216,179,124,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'kennet-avon-canal-devizes-to-honey-street.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(116,119,222,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'kennet-avon-canal-honey-street-to-wooton-rivers.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(200,128,235,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'kennet-avon-canal-hungerford-to-newbury.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(227,132,31,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'kennet-avon-canal-newbury-to-aldermaston.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(220,130,133,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'kennet-avon-canal-wooton-rivers-to-crofton.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(94,36,211,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'kings-cross-to-camden-market-return.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(148,202,112,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'lake-coniston-circuit.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(104,218,78,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'lake-coniston-eastside.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(209,218,72,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'lake-coniston-westside.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(209,218,72,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'lancaster-canal-garstang-to-lancaster.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(224,208,58,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'lancaster-canal-garstang-to-salwick.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(58,216,140,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'lancaster-canal-glasson-ring-section-2-lune-aqueduct-to-galgate.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(133,201,121,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'lancaster-canal-tewitfield-to-lancaster.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(216,56,174,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'limehouse-loop.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(169,84,218,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'little-venice-to-camden-market-return.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(169,84,218,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'llangollen-canal-ellesmere-to-chirk.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(91,232,225,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'llangollen-canal-horseshoe-falls-to-chirk(1).gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(56,180,237,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'llangollen-canal-horseshoe-falls-to-chirk.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(100,193,221,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'macclesfield-canal.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(102,216,151,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'oxford-canal-nell-bridge-to-cropredy.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(76,229,117,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'peak-forest-canal-bugsworth-basin-to-new-mills-marina.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(98,189,225,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'peak-forest-canal-dukinfield-junction-to-marple-bridge.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(186,112,200,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'peak-forest-canal-marple-to-whaley-bridge.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(105,224,193,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'poole-harbour-to-brownsea-island.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(210,44,160,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'ripon-to-york-full-route.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(33,93,232,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-arun-pulborough-to-arundel.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(87,202,175,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-avon-vale-of-evesham.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(110,218,162,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-bure-horstead-mill-downstream-towards-wroxham.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(169,215,42,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-bure-horstead-mill-upstream-towards-buxton.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(238,27,147,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-cam-cambridge-to-grantchester.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(173,218,114,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-coquet.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(215,208,99,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-crouch-hullbridge-to-battlesbridge.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(238,210,96,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-deben-waldringfield-to-wilford-bridge.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(183,209,32,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-dee-farndon-bridge-to-chester.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(225,18,111,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-derwent-darley-abbey-to-derby.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(69,170,237,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-douglas-and-rufford-branch-of-the-leeds-liverpool-canal.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(230,206,65,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-exe-and-exeter-ship-canal-loop-1-exeter-quay-to-salmonpool.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(93,223,138,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-exe-and-exeter-ship-canal-loop-4-topsham-to-turf-lock.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(83,219,138,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-exe-and-the-exeter-ship-canal-loop-2-salmonpool-to-countess-wear.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(164,213,119,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-exe-and-the-exeter-ship-canal-loop-3-countess-wear-to-topsham.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(186,211,104,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-great-ouse-kempston-bedford-to-great-barford.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(225,16,100,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-hamble-hampshire.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(78,203,33,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-lee-navigation-hertford-to-broxbourne.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(227,85,114,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-lune-glasson-ring-section-1-glasson-to-aqueduct.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(217,116,224,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-medina-isle-of-wight.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(81,201,119,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-mersey-heaton-mersey-to-northenden.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(122,27,216,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'rivers-cam-great-ouse-cambridge-to-ely.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(221,18,14,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-severn-bridgnorth-to-upper-arley.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(223,62,53,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-severn-haw-bridge-to-tewkesbury.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(205,145,14,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-severn-tewkesbury-round-trip.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(219,54,156,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-soar-hope-and-anchor-loop.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(102,29,220,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-soar-normanton-on-soar-to-stanford-on-soar.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(217,41,179,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-stour-cattawade-to-dedham.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(80,201,231,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-stour-iford-to-mudeford-return.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(62,225,79,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-stour-sudbury-to-henny-swan.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(127,211,196,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-tees-tees-barrage-to-surtees-bridge.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(230,20,97,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-tees-tees-barrage-to-yarm.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(129,204,106,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-thames-and-st-patrick-s-stream.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(33,143,232,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-thames-culham-lock-to-clifton-hampden.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(19,230,146,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-thames-hampton-court-to-richmond.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(25,206,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-thames-henley-to-marlow.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(232,31,61,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-thames-hurley-lock-to-maidenhead.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(222,196,130,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-thames-pangbourne-to-reading-thames-valley-park.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(69,62,204,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-thames-putney-to-old-isleworth.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(30,74,206,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-thames-putney-to-shadwell-basin.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(30,74,206,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'River-Thames-reading-to-henley.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(53,229,168,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-thames-via-st-patrick-s-stream-to-henley.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(44,202,200,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-thames-wallingford-to-pangbourne.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(239,75,217,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-trent-beeston-weir-to-holme-pierrepont.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(155,211,128,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-trent-holme-pierrepont-to-beeston-weir.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(39,77,225,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-trent-yoxall-to-alrewas.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(227,102,204,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-tweed.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(227,42,85,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-tyne-newburn-country-park-to-st-peter-s-basin-marina.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(226,111,23,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-waveney-bungay-loop.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(230,118,225,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-wear-fatfield-to-north-hylton.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(58,188,211,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-wey-and-godalming-navigations-guildford-to-shalford.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(226,131,14,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-wey-guildford-to-st-catherine-s-lock.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(226,131,14,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-wey-navigation-guildford-to-pyrford.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(101,55,239,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-wey-navigation-pyrford-lock-to-weybridge-town-lock.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(215,122,111,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'river-witham-lincoln.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(176,211,99,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'stratford-upon-avon-canal.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(22,214,51,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'sussex-river-ouse-piddinghoe-to-lewes.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(54,147,233,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'teign-estuary-teignmouth.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(91,217,23,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'thames-valley-park-circular.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(203,119,164,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'thirlmere-circumnavigation.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(40,104,208,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'trent-mersey-canal-alrewas-to-fradley.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(228,65,212,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'trent-mersey-canal-and-river-trent-alrewas-loop.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(110,234,108,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'trent-mersey-canal-armitage-to-fradley.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(217,88,68,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'ullswater-lake.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(212,171,100,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'wicken-fen-cambridgeshire-lodes.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(233,95,36,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'windermere-from-ambleside.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(199,77,229,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'wyrley-essington-canal-and-cannock-extensions-brownhills-to-norton-canes.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(51,205,87,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'wyrley-essington-canal-brownhills-to-chasewater.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(220,98,137,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                case 'wyrley-essington-canal-brownhills-to-longwood.gpx':
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(200,32,141,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_ENG_Canoe_Trails_1',
+                opacity: 1,
+                color: 'rgba(73,45,208,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+                    break;
+            }
         }
-        map.createPane('pane_erewashcanalilkestontotrentlocktracks_8');
-        map.getPane('pane_erewashcanalilkestontotrentlocktracks_8').style.zIndex = 408;
-        map.getPane('pane_erewashcanalilkestontotrentlocktracks_8').style['mix-blend-mode'] = 'normal';
-        var layer_erewashcanalilkestontotrentlocktracks_8 = new L.geoJson(json_erewashcanalilkestontotrentlocktracks_8, {
+        map.createPane('pane_ENG_Canoe_Trails_1');
+        map.getPane('pane_ENG_Canoe_Trails_1').style.zIndex = 401;
+        map.getPane('pane_ENG_Canoe_Trails_1').style['mix-blend-mode'] = 'normal';
+        var layer_ENG_Canoe_Trails_1 = new L.geoJson(json_ENG_Canoe_Trails_1, {
             attribution: '',
-            pane: 'pane_erewashcanalilkestontotrentlocktracks_8',
-            onEachFeature: pop_erewashcanalilkestontotrentlocktracks_8,
-            style: style_erewashcanalilkestontotrentlocktracks_8_0,
+            pane: 'pane_ENG_Canoe_Trails_1',
+            onEachFeature: pop_ENG_Canoe_Trails_1,
+            style: style_ENG_Canoe_Trails_1_0,
         });
-        bounds_group.addLayer(layer_erewashcanalilkestontotrentlocktracks_8);
-        map.addLayer(layer_erewashcanalilkestontotrentlocktracks_8);
+        bounds_group.addLayer(layer_ENG_Canoe_Trails_1);
+        map.addLayer(layer_ENG_Canoe_Trails_1);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'ENG_Canoe_Trails<br /><table><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_1riverwyeglasburytowhitneyonwyegpx0.png" /></td><td>1-river-wye-glasbury-to-whitney-on-wye.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_2riverwyewhitneyonwyetobyecrossgpx1.png" /></td><td>2-river-wye-whitney-on-wye-to-byecross.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_3riverwyebyecrosstoherefordgpx2.png" /></td><td>3-river-wye-byecross-to-hereford.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_4riverwyeherefordtohoarwithygpx3.png" /></td><td>4-river-wye-hereford-to-hoarwithy.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_5riverwyehoarwithytorossonwyegpx4.png" /></td><td>5-river-wye-hoarwithy-to-ross-on-wye.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_6riverwyerossonwyetosymondsyatgpx5.png" /></td><td>6-river-wye-ross-on-wye-to-symonds-yat.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_7riverwyesymondsyattoredbrookgpx6.png" /></td><td>7-river-wye-symonds-yat-to-redbrook.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_ashbycanalhinckleytosuttoncheneywharfgpx7.png" /></td><td>ashby-canal-hinckley-to-sutton-cheney-wharf.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_barrowloopgpx8.png" /></td><td>barrow-loop.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_basingstokecanalashlocktoreadingroadfleetgpx9.png" /></td><td>basingstoke-canal-ash-lock-to-reading-road-fleet.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_basingstokecanalbarleymowtoodihamgpx10.png" /></td><td>basingstoke-canal-barley-mow-to-odiham.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_basingstokecanalcrookhamtobarleymowgpx11.png" /></td><td>basingstoke-canal-crookham-to-barley-mow.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_beaulieuriverbucklershardtobeaulieugpx12.png" /></td><td>beaulieu-river-bucklers-hard-to-beaulieu.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_beaulieuriverbucklershardtolepebeachgpx13.png" /></td><td>beaulieu-river-bucklers-hard-to-lepe-beach.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_bingleyringriveraireleedsliverpoolcanalgpx14.png" /></td><td>bingley-ring-river-aire-leeds-liverpool-canal.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_birmingham4dudleycanaltrusttocambrianwharfgpx15.png" /></td><td>birmingham-4-dudley-canal-trust-to-cambrian-wharf.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_birminghamcanalsroute1brownhillstosneydgpx16.png" /></td><td>birmingham-canals-route-1-brownhills-to-sneyd.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_birminghamcanalsroute2sneydtobentleybridgegpx17.png" /></td><td>birmingham-canals-route-2-sneyd-to-bentley-bridge.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_birminghamcanalsroute3bentleybridgetodudleycrtgpx18.png" /></td><td>birmingham-canals-route-3-bentley-bridge-to-dudley-crt.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_birminghamcanalsroute5cambrianwharftoshirleydrawbridgegpx19.png" /></td><td>birmingham-canals-route-5-cambrian-wharf-to-shirley-drawbridge.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_birminghamcanalsroute6shirleydrawbridgetohockleyheathgpx20.png" /></td><td>birmingham-canals-route-6-shirley-drawbridge-to-hockley-heath.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_bridgewatercanalbartonuponirwelltoleighgpx21.png" /></td><td>bridgewater-canal-barton-upon-irwell-to-leigh.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_bridgewatercanalcastlefieldtolittlebollingtongpx22.png" /></td><td>bridgewater-canal-castlefield-to-little-bollington.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_bridgewatercanallittlebollingtontokeckwickhillbridgegpx23.png" /></td><td>bridgewater-canal-little-bollington-to-keckwick-hill-bridge.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_bridgewatercanalworsleytomanchestergpx24.png" /></td><td>bridgewater-canal-worsley-to-manchester.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_bridgwaterandtauntoncanalmaunsellocktocreechstmichaelandreturngpx25.png" /></td><td>bridgwater-and-taunton-canal-maunsel-lock-to-creech-st-michael-and-return.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_broadsbartonbroadanddilhamcanalgpx26.png" /></td><td>broads-barton-broad-and-dilham-canal.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_broadshorningandhovetonlittlebroadgpx27.png" /></td><td>broads-horning-and-hoveton-little-broad.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_broadswroxhamandsalhousebroadsgpx28.png" /></td><td>broads-wroxham-and-salhouse-broads.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_caldoncanaldeephayescountryparktofroghallwharfgpx29.png" /></td><td>caldon-canal-deep-hayes-country-park-to-froghall-wharf.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_chelmerandblackwaternavigationchelmsfordtomaldongpx30.png" /></td><td>chelmer-and-blackwater-navigation-chelmsford-to-maldon.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_chesterfieldcanalheritagetrailgpx31.png" /></td><td>chesterfield-canal-heritage-trail.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_chesterfieldcanalworksoptoosbertongpx32.png" /></td><td>chesterfield-canal-worksop-to-osberton.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_christchurchcirclegpx33.png" /></td><td>christchurch-circle.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_cromfordcanalheritagetrailgpx34.png" /></td><td>cromford-canal-heritage-trail.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_derwentwatergpx35.png" /></td><td>derwent-water.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_durhamloopgpx36.png" /></td><td>durham-loop.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_erewashcanalilkestontotrentlockgpx37.png" /></td><td>erewash-canal-ilkeston-to-trent-lock.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_erewashcanaltrailpart1langleymilltoilkestongpx38.png" /></td><td>erewash-canal-trail-part-1-langley-mill-to-ilkeston.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_fossdykenavigationtorkseytolincolngpx39.png" /></td><td>fossdyke-navigation-torksey-to-lincoln.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_gloucestersharpnesscanalpurtontoparkendbridgegpx40.png" /></td><td>gloucester-sharpness-canal-purton-to-parkend-bridge.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_gloucestersharpnesscanalpurtontoslimbridgegpx41.png" /></td><td>gloucester-sharpness-canal-purton-to-slimbridge.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_gloucestersharpnesscanalpurtontosplattbridgereturngpx42.png" /></td><td>gloucester-sharpness-canal-purton-to-splatt-bridge-return.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_gloucestersharpnesspurtontosharpnessreturngpx43.png" /></td><td>gloucester-sharpness-purton-to-sharpness-return.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_grandwesterncanaltrailgpx44.png" /></td><td>grand-western-canal-trail.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_horsendenhillvisitorcentretolittlevenicereturngpx45.png" /></td><td>horsenden-hill-visitor-centre-to-little-venice-return.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_kennetavoncanalaldermastontoreadinggpx46.png" /></td><td>kennet-avon-canal-aldermaston-to-reading.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_kennetavoncanalcroftontohungerfordgpx47.png" /></td><td>kennet-avon-canal-crofton-to-hungerford.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_kennetavoncanaldevizestohoneystreetgpx48.png" /></td><td>kennet-avon-canal-devizes-to-honey-street.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_kennetavoncanalhoneystreettowootonriversgpx49.png" /></td><td>kennet-avon-canal-honey-street-to-wooton-rivers.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_kennetavoncanalhungerfordtonewburygpx50.png" /></td><td>kennet-avon-canal-hungerford-to-newbury.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_kennetavoncanalnewburytoaldermastongpx51.png" /></td><td>kennet-avon-canal-newbury-to-aldermaston.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_kennetavoncanalwootonriverstocroftongpx52.png" /></td><td>kennet-avon-canal-wooton-rivers-to-crofton.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_kingscrosstocamdenmarketreturngpx53.png" /></td><td>kings-cross-to-camden-market-return.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_lakeconistoncircuitgpx54.png" /></td><td>lake-coniston-circuit.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_lakeconistoneastsidegpx55.png" /></td><td>lake-coniston-eastside.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_lakeconistonwestsidegpx56.png" /></td><td>lake-coniston-westside.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_lancastercanalgarstangtolancastergpx57.png" /></td><td>lancaster-canal-garstang-to-lancaster.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_lancastercanalgarstangtosalwickgpx58.png" /></td><td>lancaster-canal-garstang-to-salwick.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_lancastercanalglassonringsection2luneaqueducttogalgategpx59.png" /></td><td>lancaster-canal-glasson-ring-section-2-lune-aqueduct-to-galgate.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_lancastercanaltewitfieldtolancastergpx60.png" /></td><td>lancaster-canal-tewitfield-to-lancaster.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_limehouseloopgpx61.png" /></td><td>limehouse-loop.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_littlevenicetocamdenmarketreturngpx62.png" /></td><td>little-venice-to-camden-market-return.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_llangollencanalellesmeretochirkgpx63.png" /></td><td>llangollen-canal-ellesmere-to-chirk.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_llangollencanalhorseshoefallstochirk1gpx64.png" /></td><td>llangollen-canal-horseshoe-falls-to-chirk(1).gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_llangollencanalhorseshoefallstochirkgpx65.png" /></td><td>llangollen-canal-horseshoe-falls-to-chirk.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_macclesfieldcanalgpx66.png" /></td><td>macclesfield-canal.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_oxfordcanalnellbridgetocropredygpx67.png" /></td><td>oxford-canal-nell-bridge-to-cropredy.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_peakforestcanalbugsworthbasintonewmillsmarinagpx68.png" /></td><td>peak-forest-canal-bugsworth-basin-to-new-mills-marina.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_peakforestcanaldukinfieldjunctiontomarplebridgegpx69.png" /></td><td>peak-forest-canal-dukinfield-junction-to-marple-bridge.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_peakforestcanalmarpletowhaleybridgegpx70.png" /></td><td>peak-forest-canal-marple-to-whaley-bridge.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_pooleharbourtobrownseaislandgpx71.png" /></td><td>poole-harbour-to-brownsea-island.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_ripontoyorkfullroutegpx72.png" /></td><td>ripon-to-york-full-route.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverarunpulboroughtoarundelgpx73.png" /></td><td>river-arun-pulborough-to-arundel.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riveravonvaleofeveshamgpx74.png" /></td><td>river-avon-vale-of-evesham.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverburehorsteadmilldownstreamtowardswroxhamgpx75.png" /></td><td>river-bure-horstead-mill-downstream-towards-wroxham.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverburehorsteadmillupstreamtowardsbuxtongpx76.png" /></td><td>river-bure-horstead-mill-upstream-towards-buxton.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_rivercamcambridgetograntchestergpx77.png" /></td><td>river-cam-cambridge-to-grantchester.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_rivercoquetgpx78.png" /></td><td>river-coquet.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_rivercrouchhullbridgetobattlesbridgegpx79.png" /></td><td>river-crouch-hullbridge-to-battlesbridge.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverdebenwaldringfieldtowilfordbridgegpx80.png" /></td><td>river-deben-waldringfield-to-wilford-bridge.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverdeefarndonbridgetochestergpx81.png" /></td><td>river-dee-farndon-bridge-to-chester.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverderwentdarleyabbeytoderbygpx82.png" /></td><td>river-derwent-darley-abbey-to-derby.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverdouglasandruffordbranchoftheleedsliverpoolcanalgpx83.png" /></td><td>river-douglas-and-rufford-branch-of-the-leeds-liverpool-canal.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverexeandexetershipcanalloop1exeterquaytosalmonpoolgpx84.png" /></td><td>river-exe-and-exeter-ship-canal-loop-1-exeter-quay-to-salmonpool.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverexeandexetershipcanalloop4topshamtoturflockgpx85.png" /></td><td>river-exe-and-exeter-ship-canal-loop-4-topsham-to-turf-lock.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverexeandtheexetershipcanalloop2salmonpooltocountessweargpx86.png" /></td><td>river-exe-and-the-exeter-ship-canal-loop-2-salmonpool-to-countess-wear.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverexeandtheexetershipcanalloop3countessweartotopshamgpx87.png" /></td><td>river-exe-and-the-exeter-ship-canal-loop-3-countess-wear-to-topsham.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_rivergreatousekempstonbedfordtogreatbarfordgpx88.png" /></td><td>river-great-ouse-kempston-bedford-to-great-barford.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverhamblehampshiregpx89.png" /></td><td>river-hamble-hampshire.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverleenavigationhertfordtobroxbournegpx90.png" /></td><td>river-lee-navigation-hertford-to-broxbourne.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverluneglassonringsection1glassontoaqueductgpx91.png" /></td><td>river-lune-glasson-ring-section-1-glasson-to-aqueduct.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_rivermedinaisleofwightgpx92.png" /></td><td>river-medina-isle-of-wight.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_rivermerseyheatonmerseytonorthendengpx93.png" /></td><td>river-mersey-heaton-mersey-to-northenden.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverscamgreatousecambridgetoelygpx94.png" /></td><td>rivers-cam-great-ouse-cambridge-to-ely.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riversevernbridgnorthtoupperarleygpx95.png" /></td><td>river-severn-bridgnorth-to-upper-arley.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riversevernhawbridgetotewkesburygpx96.png" /></td><td>river-severn-haw-bridge-to-tewkesbury.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverseverntewkesburyroundtripgpx97.png" /></td><td>river-severn-tewkesbury-round-trip.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riversoarhopeandanchorloopgpx98.png" /></td><td>river-soar-hope-and-anchor-loop.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riversoarnormantononsoartostanfordonsoargpx99.png" /></td><td>river-soar-normanton-on-soar-to-stanford-on-soar.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverstourcattawadetodedhamgpx100.png" /></td><td>river-stour-cattawade-to-dedham.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverstourifordtomudefordreturngpx101.png" /></td><td>river-stour-iford-to-mudeford-return.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverstoursudburytohennyswangpx102.png" /></td><td>river-stour-sudbury-to-henny-swan.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverteesteesbarragetosurteesbridgegpx103.png" /></td><td>river-tees-tees-barrage-to-surtees-bridge.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverteesteesbarragetoyarmgpx104.png" /></td><td>river-tees-tees-barrage-to-yarm.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverthamesandstpatricksstreamgpx105.png" /></td><td>river-thames-and-st-patrick-s-stream.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverthamesculhamlocktocliftonhampdengpx106.png" /></td><td>river-thames-culham-lock-to-clifton-hampden.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverthameshamptoncourttorichmondgpx107.png" /></td><td>river-thames-hampton-court-to-richmond.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverthameshenleytomarlowgpx108.png" /></td><td>river-thames-henley-to-marlow.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverthameshurleylocktomaidenheadgpx109.png" /></td><td>river-thames-hurley-lock-to-maidenhead.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverthamespangbournetoreadingthamesvalleyparkgpx110.png" /></td><td>river-thames-pangbourne-to-reading-thames-valley-park.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverthamesputneytooldisleworthgpx111.png" /></td><td>river-thames-putney-to-old-isleworth.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverthamesputneytoshadwellbasingpx112.png" /></td><td>river-thames-putney-to-shadwell-basin.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_RiverThamesreadingtohenleygpx113.png" /></td><td>River-Thames-reading-to-henley.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverthamesviastpatricksstreamtohenleygpx114.png" /></td><td>river-thames-via-st-patrick-s-stream-to-henley.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverthameswallingfordtopangbournegpx115.png" /></td><td>river-thames-wallingford-to-pangbourne.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_rivertrentbeestonweirtoholmepierrepontgpx116.png" /></td><td>river-trent-beeston-weir-to-holme-pierrepont.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_rivertrentholmepierreponttobeestonweirgpx117.png" /></td><td>river-trent-holme-pierrepont-to-beeston-weir.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_rivertrentyoxalltoalrewasgpx118.png" /></td><td>river-trent-yoxall-to-alrewas.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_rivertweedgpx119.png" /></td><td>river-tweed.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_rivertynenewburncountryparktostpetersbasinmarinagpx120.png" /></td><td>river-tyne-newburn-country-park-to-st-peter-s-basin-marina.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverwaveneybungayloopgpx121.png" /></td><td>river-waveney-bungay-loop.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverwearfatfieldtonorthhyltongpx122.png" /></td><td>river-wear-fatfield-to-north-hylton.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverweyandgodalmingnavigationsguildfordtoshalfordgpx123.png" /></td><td>river-wey-and-godalming-navigations-guildford-to-shalford.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverweyguildfordtostcatherineslockgpx124.png" /></td><td>river-wey-guildford-to-st-catherine-s-lock.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverweynavigationguildfordtopyrfordgpx125.png" /></td><td>river-wey-navigation-guildford-to-pyrford.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverweynavigationpyrfordlocktoweybridgetownlockgpx126.png" /></td><td>river-wey-navigation-pyrford-lock-to-weybridge-town-lock.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_riverwithamlincolngpx127.png" /></td><td>river-witham-lincoln.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_stratforduponavoncanalgpx128.png" /></td><td>stratford-upon-avon-canal.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_sussexriverousepiddinghoetolewesgpx129.png" /></td><td>sussex-river-ouse-piddinghoe-to-lewes.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_teignestuaryteignmouthgpx130.png" /></td><td>teign-estuary-teignmouth.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_thamesvalleyparkcirculargpx131.png" /></td><td>thames-valley-park-circular.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_thirlmerecircumnavigationgpx132.png" /></td><td>thirlmere-circumnavigation.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_trentmerseycanalalrewastofradleygpx133.png" /></td><td>trent-mersey-canal-alrewas-to-fradley.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_trentmerseycanalandrivertrentalrewasloopgpx134.png" /></td><td>trent-mersey-canal-and-river-trent-alrewas-loop.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_trentmerseycanalarmitagetofradleygpx135.png" /></td><td>trent-mersey-canal-armitage-to-fradley.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_ullswaterlakegpx136.png" /></td><td>ullswater-lake.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_wickenfencambridgeshirelodesgpx137.png" /></td><td>wicken-fen-cambridgeshire-lodes.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_windermerefromamblesidegpx138.png" /></td><td>windermere-from-ambleside.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_wyrleyessingtoncanalandcannockextensionsbrownhillstonortoncanesgpx139.png" /></td><td>wyrley-essington-canal-and-cannock-extensions-brownhills-to-norton-canes.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_wyrleyessingtoncanalbrownhillstochasewatergpx140.png" /></td><td>wyrley-essington-canal-brownhills-to-chasewater.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_wyrleyessingtoncanalbrownhillstolongwoodgpx141.png" /></td><td>wyrley-essington-canal-brownhills-to-longwood.gpx</td></tr><tr><td style="text-align: center;"><img src="legend/ENG_Canoe_Trails_1_142.png" /></td><td></td></tr></table>': layer_ENG_Canoe_Trails_1,"OpenStreetMap": layer_OpenStreetMap_0,}).addTo(map);
         setBounds();
         </script>
     </body>
